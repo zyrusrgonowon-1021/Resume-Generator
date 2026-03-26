@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <script src="resumegenerator.js" defer></script>
+    <link rel="stylesheet" href="resumegenerator.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="headtitle">📄 RESUME GENERATOR</h1>
+            <p class="subtitle">Create a professional resume in minutes</p>
+        </header>
+
+        <div class="form-container">
+            <form class="fillupform" id="resumeForm">
+                <!-- Personal Information Section -->
+                <fieldset class="form-section">
+                    <legend class="section-title">Personal Information</legend>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="UploadImages">Profile Photo:</label>
+                            <input type="file" id="UploadImages" class="UploadImage" name="UploadImage" accept="image/*" required>
+                            <small class="helper-text">JPG, PNG (Max 5MB)</small>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fname">Full Name:</label>
+                            <input type="text" id="fname" name="fname" class="fname" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bday">Birthday:</label>
+                            <input type="date" id="bday" name="bday" min="1960-01-01" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone">Phone No:</label>
+                            <input type="tel" id="Phone" name="Phone" class="phoneno" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Education Section -->
+                <fieldset class="form-section">
+                    <legend class="section-title">Education</legend>
+                    
+                    <div class="form-group">
+                        <label for="Educ">Education Background:</label>
+                        <select id="Educ" name="Educ" class="educ" required>
+                            <option value="">-- Select Education Level --</option>
+                            <option value="Highschool Graduate">Highschool Graduate</option>
+                            <option value="Senior High Graduate">Senior High Graduate</option>
+                            <option value="Bachelor Degree">Bachelor Degree</option>
+                            <option value="Masters Degree">Masters Degree</option>
+                            <option value="Doctorate Degree">Doctorate Degree</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Professional Information Section -->
+                <fieldset class="form-section">
+                    <legend class="section-title">Professional Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="skills">Skills:</label>
+                        <textarea id="skills" name="skills" class="textarea-input" placeholder="e.g., Python, JavaScript, Project Management, Leadership..." required></textarea>
+                        <small class="helper-text">Separate skills with commas for better formatting</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Work Experience:</label>
+                        <textarea id="experience" name="experience" class="textarea-input" placeholder="e.g., Software Developer at XYZ Corp (2020-2022)..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accomplishment">Accomplishments:</label>
+                        <textarea id="accomplishment" name="accomplishment" class="textarea-input" placeholder="e.g., Led a team of 5 developers, Increased efficiency by 30%..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Attachments Section -->
+                <fieldset class="form-section">
+                    <legend class="section-title">Attachments (Optional)</legend>
+                    
+                    <div class="form-group">
+                        <label for="certificate">Certificate/Credential:</label>
+                        <input type="file" id="certificate" class="UploadCertificate" name="UploadCertificate" accept=".pdf,.doc,.docx,image/*">
+                        <small class="helper-text">PDF, DOC, DOCX, or Image files accepted</small>
+                    </div>
+                </fieldset>
+
+                <!-- Error Messages -->
+                <div id="errorContainer" class="error-container"></div>
+
+                <!-- Submit Button -->
+                <div class="button-group">
+                    <button type="submit" class="buttonclick">Generate Resume</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
